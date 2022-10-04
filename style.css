@@ -1,0 +1,93 @@
+body {
+    font-family: 'Inter';
+}
+
+div {
+    display: flex;
+    align-items: stretch;
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 27px;
+    text-align: center;
+    margin: 0 0 2.5% 0;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 0px;
+}
+
+p {
+    font-size: 27px;
+    padding: 10px;
+    margin: 0px;
+    font-weight: normal;
+}
+
+.heading {
+    font-weight: bold;
+}
+
+.hasBackground {
+    background-color: #E8E8E8;
+}
+
+.selected {
+    background-color: #7CFF79;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin: 2.5%;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5%;
+    width: 20%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0px;
+}
+
+.typeChip {
+    background-color: aquamarine;
+    border-radius: 10px;
+    padding: 1%;
+    font-size: 18px;
+    margin: 1% 1% 1% 0;
+}
+
+.pokePic {
+    border: 2px solid black;
+}
+
+.name {
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin: 2.5% 0 0 0;
+}
+
+.typeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin: 2.5% 0 2.5% 0;
+}
