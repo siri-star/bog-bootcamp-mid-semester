@@ -47,7 +47,7 @@ p {
     display: flex;
     flex-direction: column;
     width: 45%;
-    margin: 2.5%;
+    margin: 2.5% 2.5% 0 2.5%
 }
 
 .buttonContainer {
@@ -78,16 +78,31 @@ p {
     border: 2px solid black;
 }
 
-.name {
-    border: 1px solid black;
-    border-radius: 10px;
-    text-align: center;
-    margin: 2.5% 0 0 0;
-}
-
 .typeContainer {
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     margin: 2.5% 0 2.5% 0;
+}
+
+.identifiers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#statsText {
+    height: 100%;
+}
+
+#picture {
+    width: 50%;
+}
+
+#name {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 2.5% 0 0 0;
+    width: 100%;
+    text-align: center;
 }

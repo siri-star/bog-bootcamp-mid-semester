@@ -12,38 +12,46 @@
         <div>
             <!-- identifiers -->
             <div class="column">
-                <img class="pokePic">
-                <p class="hasBackground name">name</p>
+                <div class="identifiers">
+                    <img class="pokePic" id="picture" src="">
+                    <p class="hasBackground" id="name">name</p>
+                </div>
+
                 <!-- types -->
                 <div class="typeContainer">
                     <h3 class="heading">Types:</h3>
+                    
                     <!-- types carousel -->
-                    <div>
-                        <p class="typeChip">type</p>
-                        <p class="typeChip">type</p>
-                        <p class="typeChip">type</p>
+                    <div id="typeChipContainer">
+                        <!-- remove this -->
+                        <p class="typeChip">type</p> 
                     </div>
                 </div>
+
                 <!-- buttons: arrows -->
                 <div class="buttonContainer">
                     <!-- back -->
-                    <div class="hasBackground button">
+                    <div class="hasBackground button" id="back">
                         <img src="back.png" width="30" height="30">
                     </div>
+
                     <!-- forward -->
-                    <div class="hasBackground button">
+                    <div class="hasBackground button" id="forward">
                         <img src="forward.png" width="30" height="30">
                     </div>
                 </div>
             </div>
+
             <!-- information -->
             <div class="column">
-                <h2 class="heading">Info</h2>
-                <p class="hasBackground">words!</p>
+                <h2 class="heading" id="statsHeading">Info</h2>
+
+                <p class="hasBackground" id="statsText">words!</p>
+
                 <!-- buttons: toggle info / moves -->
                 <div class="buttonContainer">
-                    <p class="selected button">Info</p>
-                    <p class="hasBackground button">Moves</p>
+                    <p class="selected button" id="info">Info</p>
+                    <p class="hasBackground button" id="moves">Moves</p>
                 </div>
             </div>
         </div>
