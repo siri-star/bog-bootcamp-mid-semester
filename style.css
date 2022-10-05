@@ -35,7 +35,7 @@ p {
     font-weight: bold;
 }
 
-.hasBackground {
+.grey {
     background-color: #E8E8E8;
 }
 
@@ -103,6 +103,6 @@ p {
     border: 1px solid black;
     border-radius: 10px;
     margin: 2.5% 0 0 0;
-    width: 47.5%;
+    width: 100%;
     text-align: center;
 }

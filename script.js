@@ -16,6 +16,8 @@ async function initialize() {
     update();
 }
 
+// event handlers
+
 document.getElementById("back").addEventListener(
     "click",
     () => {
@@ -32,4 +34,25 @@ document.getElementById("forward").addEventListener(
         update();
 });
 
+const moves = document.getElementById("moves")
+moves.addEventListener(
+    "click",
+    () => {
+        moves.classList.add("selected");
+        moves.classList.remove("grey");
+        info.classList.remove("selected");
+        info.classList.add("grey");
+});
+
+const info = document.getElementById("info")
+info.addEventListener(
+    "click",
+    () => {
+        info.classList.add("selected");
+        info.classList.remove("grey");
+        moves.classList.remove("selected");
+        moves.classList.add("grey");
+});
+
+//main
 initialize();
