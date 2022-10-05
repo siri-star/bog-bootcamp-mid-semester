@@ -1,5 +1,12 @@
 let id = 1;
 let total = 0;
+let movesText = "";
+let infoText = "";
+
+const movesElement = document.getElementById("moves");
+const infoElement = document.getElementById("info");
+const statsHeading = document.getElementById("statsHeading");
+const statsText = document.getElementById("statsText")
 
 const typeDictionary = {
     "normal": "A8A77A",
@@ -26,10 +33,21 @@ async function update() {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + id);
     const data = await response.json();
 
+    // get / set page content
+
+    // set picture
     document.getElementById("picture").src = data.sprites.other["official-artwork"].front_default;
+
+    // set name
     document.getElementById("name").textContent = data.forms[0].name;
+
+    // set type chips
     setTypes(data.types);
 
+    // set stats text
+    getMovesText(data.moves);
+    getInfoText(data.height, data.weight, data.stats);
+    statsText.textContent = infoElement.classList.contains("selected") ? infoText : movesText;
 }
 
 async function initialize() {
@@ -51,7 +69,22 @@ function setTypes(types) {
     });
 }
 
+// TODO: add line breaks
+// TODO: handle overflow (large number of moves) - limit displayed moves or add scroll bar
+function getMovesText(moves) {
+    movesText = moves.reduce((acc, cur) => acc + cur.move.name + "\n", "");
+}
+
+// TODO: add line breaks
+function getInfoText(height, weight, stats) {
+    infoText = "";
+    infoText += height / 10 + " m \n";
+    infoText += weight / 10 + " kg \n";
+    infoText = stats.reduce((acc, cur) => acc + cur.stat.name + ": " + cur.base_stat + "\n", infoText);
+}
+
 // event handlers
+
 document.getElementById("back").addEventListener(
     "click",
     () => {
@@ -68,30 +101,29 @@ document.getElementById("forward").addEventListener(
         update();
 });
 
-const moves = document.getElementById("moves");
-const info = document.getElementById("info");
-const statsHeading = document.getElementById("statsHeading");
-moves.addEventListener(
+movesElement.addEventListener(
     "click",
     () => {
-        moves.classList.add("selected");
-        moves.classList.remove("grey");
-        info.classList.remove("selected");
-        info.classList.add("grey");
+        movesElement.classList.add("selected");
+        movesElement.classList.remove("grey");
+        infoElement.classList.remove("selected");
+        infoElement.classList.add("grey");
 
         statsHeading.textContent = "Moves";
+        statsText.textContent = movesText;
 });
 
-info.addEventListener(
+infoElement.addEventListener(
     "click",
     () => {
-        info.classList.add("selected");
-        info.classList.remove("grey");
-        moves.classList.remove("selected");
-        moves.classList.add("grey");
+        infoElement.classList.add("selected");
+        infoElement.classList.remove("grey");
+        movesElement.classList.remove("selected");
+        movesElement.classList.add("grey");
 
         statsHeading.textContent = "Info";
+        statsText.textContent = infoText;
 });
 
-//main
+// main
 initialize();
