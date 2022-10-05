@@ -52,7 +52,6 @@ function setTypes(types) {
 }
 
 // event handlers
-
 document.getElementById("back").addEventListener(
     "click",
     () => {
@@ -69,7 +68,9 @@ document.getElementById("forward").addEventListener(
         update();
 });
 
-const moves = document.getElementById("moves")
+const moves = document.getElementById("moves");
+const info = document.getElementById("info");
+const statsHeading = document.getElementById("statsHeading");
 moves.addEventListener(
     "click",
     () => {
@@ -77,9 +78,10 @@ moves.addEventListener(
         moves.classList.remove("grey");
         info.classList.remove("selected");
         info.classList.add("grey");
+
+        statsHeading.textContent = "Moves";
 });
 
-const info = document.getElementById("info")
 info.addEventListener(
     "click",
     () => {
@@ -87,6 +89,8 @@ info.addEventListener(
         info.classList.remove("grey");
         moves.classList.remove("selected");
         moves.classList.add("grey");
+
+        statsHeading.textContent = "Info";
 });
 
 //main
