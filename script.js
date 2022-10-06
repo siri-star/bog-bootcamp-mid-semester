@@ -47,7 +47,7 @@ async function update() {
     // set stats text
     getMovesText(data.moves);
     getInfoText(data.height, data.weight, data.stats);
-    statsText.textContent = infoElement.classList.contains("selected") ? infoText : movesText;
+    statsText.innerText = infoElement.classList.contains("selected") ? infoText : movesText;
 }
 
 async function initialize() {
@@ -110,7 +110,7 @@ movesElement.addEventListener(
         infoElement.classList.add("grey");
 
         statsHeading.textContent = "Moves";
-        statsText.textContent = movesText;
+        statsText.innerText = movesText;
 });
 
 infoElement.addEventListener(
@@ -122,7 +122,7 @@ infoElement.addEventListener(
         movesElement.classList.add("grey");
 
         statsHeading.textContent = "Info";
-        statsText.textContent = infoText;
+        statsText.innerText = infoText;
 });
 
 // main
